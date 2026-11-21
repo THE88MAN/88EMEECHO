@@ -10,6 +10,7 @@ export default function ActualitesPage() {
     <RubricStub
       title={meta.title}
       description={meta.description}
+      salle={meta.salle}
       articles={sectionArticles.filter((a) => a.rubric === "Actualités")}
     />
   );

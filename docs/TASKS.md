@@ -1,5 +1,11 @@
 # TASKS — LE 88ÈME ÉCHO
 
+## Livré — Refonte hybride A+B+C
+
+- [x] Accueil Mémoire vivante (intro + 6 salles)
+- [x] Framer Motion + reduced-motion
+- [x] Build OK
+
 ## Terminé — Phase 1 Fondations
 
 - [x] Scaffold Next.js + TypeScript + Tailwind (`apps/web`)
