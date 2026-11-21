@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C — Cinéma historique · LE 88ÈME ÉCHO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --noir: #050505;
+      --ambre: #c9a227;
+      --argent: #e8e2d6;
+      --film: #1a1a1a;
+      --rouge: #6e1515;
+      --sepia: #2a2218;
+      --carton: "Cinzel", serif;
+      --display: "Cormorant Garamond", Georgia, serif;
+      --ui: "DM Sans", system-ui, sans-serif;
+      --voix: "Libre Baskerville", Georgia, serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--noir); color: var(--argent); font-family: var(--voix); }
+    .badge {
+      background: var(--rouge); text-align: center; padding: 0.5rem 1rem;
+      font-family: var(--ui); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .bars { background: var(--film); }
+    .letterbox {
+      max-width: 1200px; margin: 0 auto; background: #000;
+      border-block: 28px solid var(--film);
+    }
+    .open {
+      min-height: 100svh; display: grid; place-items: center; text-align: center;
+      padding: 3rem 4vw;
+      background: radial-gradient(ellipse at 50% 45%, rgba(201,162,39,0.12), transparent 55%), var(--noir);
+    }
+    .open img { width: min(200px, 40vw); }
+    .open .carton {
+      font-family: var(--carton); font-size: clamp(1.5rem, 4vw, 2.5rem);
+      letter-spacing: 0.28em; color: var(--ambre); margin-top: 1.5rem;
+    }
+    .open p { font-family: var(--display); font-size: 1.25rem; margin-top: 1rem; opacity: 0.85; max-width: 28rem; margin-inline: auto; }
+    .plan {
+      position: relative; min-height: 62vh;
+      background:
+        linear-gradient(180deg, transparent 35%, rgba(5,5,5,0.95)),
+        radial-gradient(ellipse at 45% 40%, #4a3828, #0a0806 70%);
+      display: grid; align-items: end; padding: 2.5rem 4vw;
+    }
+    .plan .tc {
+      position: absolute; top: 1rem; left: 1rem;
+      font-family: var(--ui); font-size: 11px; letter-spacing: 0.16em; color: var(--ambre);
+    }
+    .plan h1 {
+      font-family: var(--carton); font-size: clamp(1.75rem, 4.5vw, 3rem);
+      letter-spacing: 0.12em; line-height: 1.2; max-width: 18ch;
+    }
+    nav.film-nav {
+      display: flex; justify-content: center; gap: 1.25rem; flex-wrap: wrap;
+      padding: 1rem 4vw; font-family: var(--ui); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+      border-bottom: 1px solid #222;
+    }
+    nav.film-nav a { color: color-mix(in srgb, var(--argent) 65%, transparent); text-decoration: none; }
+    .reel { padding: 4rem 4vw; }
+    .reel .label {
+      font-family: var(--ui); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ambre);
+    }
+    .reel h2 {
+      font-family: var(--display); font-size: clamp(2rem, 4vw, 3rem); margin: 0.5rem 0 1.75rem; font-weight: 600;
+    }
+    .ticker {
+      overflow: hidden; border-block: 1px solid #2a2a2a; padding: 0.65rem 0; margin-bottom: 1.5rem;
+      font-family: var(--ui); font-size: 12px; letter-spacing: 0.08em; white-space: nowrap; opacity: 0.7;
+    }
+    .une-plan {
+      aspect-ratio: 2.35/1; background: linear-gradient(120deg, #2a1e16, #0a0a0a);
+      display: grid; align-items: end; padding: 1.5rem; border: 1px solid #222;
+    }
+    .stills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+    .still { aspect-ratio: 16/10; background: var(--sepia); border: 1px solid #333; position: relative; }
+    .still span { position: absolute; bottom: 0.4rem; left: 0.4rem; font-family: var(--ui); font-size: 10px; color: var(--ambre); }
+    .voix { font-style: italic; line-height: 1.7; max-width: 40rem; margin-top: 1.5rem; opacity: 0.85; }
+    .strip { display: flex; gap: 0.4rem; overflow-x: auto; padding-bottom: 0.5rem; }
+    .cell {
+      flex: 0 0 120px; aspect-ratio: 3/4; background: #111; border: 1px solid #333;
+      font-family: var(--ui); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+      display: grid; place-items: end start; padding: 0.4rem; color: var(--ambre);
+    }
+    .cell.ia { border-color: var(--rouge); color: #e8a0a0; background: #1a0a0a; }
+    .triptyque { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .carton-box {
+      border: 1px solid #333; padding: 1.25rem; min-height: 160px;
+      background: #0c0c0c;
+    }
+    .carton-box strong {
+      display: block; font-family: var(--carton); font-size: 0.85rem; letter-spacing: 0.2em;
+      color: var(--ambre); margin-bottom: 0.75rem;
+    }
+    .diptyque { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+    .diptyque .pane { aspect-ratio: 16/11; background: linear-gradient(160deg, #3a2a20, #0a0806); }
+    .affiche {
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: center;
+      background: var(--film); padding: 2rem; border: 1px solid #2a2a2a;
+    }
+    .poster {
+      aspect-ratio: 2/3; max-width: 280px;
+      background: radial-gradient(ellipse at 50% 30%, #5a4030, #0a0806 70%);
+      border: 1px solid #333;
+    }
+    .watch {
+      display: inline-block; margin-top: 1.25rem; padding: 0.75rem 1.25rem;
+      border: 1px solid var(--ambre); font-family: var(--ui); font-size: 11px;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ambre); text-decoration: none;
+    }
+    footer { text-align: center; padding: 2.5rem; font-family: var(--ui); font-size: 11px; letter-spacing: 0.16em; opacity: 0.45; text-transform: uppercase; }
+    @media (max-width: 900px) {
+      .stills, .triptyque, .diptyque, .affiche { grid-template-columns: 1fr; }
+      .letterbox { border-block-width: 14px; }
+      nav.film-nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="badge">Maquette C — Cinéma historique · démo fictive · pas de refonte app</div>
+  <nav class="film-nav">
+    <a href="#">Accueil</a><a href="#">Actualités</a><a href="#">Histoire</a><a href="#">Géopolitique</a>
+    <a href="#">Diasporas</a><a href="#">Documentaires</a><a href="#">Archives</a><a href="#">À propos</a>
+  </nav>
+
+  <section class="open">
+    <div>
+      <img src="logo-88eme-echo.png" alt="Logo LE 88ÈME ÉCHO" />
+      <p class="carton">LE 88ÈME ÉCHO</p>
+      <p>Carton d’ouverture — la mémoire comme générique documentaire.</p>
+    </div>
+  </section>
+
+  <div class="bars"><div class="letterbox">
+    <section class="plan">
+      <span class="tc">00:00:01 · PLAN DOCUMENTAIRE</span>
+      <h1>TITRE FORT — MÉMOIRE VIVANTE</h1>
+    </section>
+  </div></div>
+
+  <section class="reel">
+    <p class="label">Bobine 01</p>
+    <h2>L’Afrique aujourd’hui</h2>
+    <div class="ticker">DÉMO · veille · 54 États · validation humaine · pas d’auto-publication · · ·</div>
+    <div class="une-plan">
+      <div>
+        <p style="font-family:var(--ui);font-size:10px;letter-spacing:.16em;color:var(--ambre)">UNE · INFORMATION VÉRIFIÉE (DÉMO)</p>
+        <p style="font-family:var(--display);font-size:clamp(1.5rem,3vw,2.25rem);margin-top:.5rem">Plan large — une seule Une à l’écran</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reel" style="background:#0a0a0a">
+    <p class="label">Bobine 02</p>
+    <h2>Les histoires oubliées</h2>
+    <div class="stills">
+      <div class="still"><span>PLAN 01</span></div>
+      <div class="still"><span>PLAN 02</span></div>
+      <div class="still"><span>PLAN 03</span></div>
+    </div>
+    <p class="voix">Voix off (chapô) : relire les silences sans inventer le manquant. Placeholder démo — aucune affirmation historique.</p>
+  </section>
+
+  <section class="reel">
+    <p class="label">Bobine 03</p>
+    <h2>Les archives parlent</h2>
+    <div class="strip">
+      <div class="cell">Source archivistique</div>
+      <div class="cell">Fonds</div>
+      <div class="cell ia">Carton IA · label</div>
+      <div class="cell">Lacune</div>
+      <div class="cell">Date ?</div>
+      <div class="cell">Provenance</div>
+      <div class="cell">Inventaire</div>
+    </div>
+  </section>
+
+  <section class="reel" style="background:#0a0a0a">
+    <p class="label">Bobine 04</p>
+    <h2>Géopolitique</h2>
+    <div class="triptyque">
+      <div class="carton-box"><strong>FAIT</strong><p>Élément documenté (démo)</p></div>
+      <div class="carton-box"><strong>DÉCLARATION</strong><p>Parole officielle (démo)</p></div>
+      <div class="carton-box"><strong>ANALYSE</strong><p>Lecture étiquetée (démo)</p></div>
+    </div>
+  </section>
+
+  <section class="reel">
+    <p class="label">Bobine 05</p>
+    <h2>Diasporas</h2>
+    <div class="diptyque">
+      <div class="pane" aria-label="Plan gauche"></div>
+      <div class="pane" aria-label="Plan droite"></div>
+    </div>
+    <p class="voix" style="margin-top:1.25rem">Diptyque — deux rives, une mémoire en circulation.</p>
+  </section>
+
+  <section class="reel" style="background:#0a0a0a">
+    <p class="label">Bobine 06</p>
+    <h2>Documentaires</h2>
+    <div class="affiche">
+      <div class="poster" aria-label="Affiche"></div>
+      <div>
+        <p style="font-family:var(--ui);font-size:11px;letter-spacing:.2em;color:var(--ambre)">ENTRÉE DE SALLE · 12:40</p>
+        <h3 style="font-family:var(--display);font-size:2rem;margin:.75rem 0;font-weight:600">Affiche + durée + regarder</h3>
+        <p style="opacity:.75;line-height:1.6">Le format long comme séance, pas comme tuile parmi d’autres.</p>
+        <a class="watch" href="#">Regarder</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>Direction C · Cinéma historique · LE 88ÈME ÉCHO · Mémoire vivante</footer>
+</body>
+</html>

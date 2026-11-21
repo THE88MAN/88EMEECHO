@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>A — Musée documentaire · LE 88ÈME ÉCHO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --fond: #0c0b0a;
+      --mur: #161412;
+      --or: #b8974a;
+      --papier: #ebe4d6;
+      --rouge: #5c1a1a;
+      --pierre: #3a3732;
+      --display: "Fraunces", Georgia, serif;
+      --ui: "Instrument Sans", system-ui, sans-serif;
+      --body: "Source Serif 4", Georgia, serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--fond); color: var(--papier); font-family: var(--body); }
+    .badge {
+      position: sticky; top: 0; z-index: 40;
+      background: var(--rouge); color: var(--papier);
+      text-align: center; font-family: var(--ui); font-size: 11px;
+      letter-spacing: 0.12em; text-transform: uppercase; padding: 0.55rem 1rem;
+    }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 4vw; border-bottom: 1px solid var(--pierre);
+      font-family: var(--ui); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    header nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    header a { color: color-mix(in srgb, var(--papier) 75%, transparent); text-decoration: none; }
+    header a:hover { color: var(--or); }
+    .intro {
+      min-height: 100svh; display: grid; place-items: center; text-align: center;
+      padding: 4rem 4vw; position: relative;
+    }
+    .intro img.logo { width: min(220px, 42vw); height: auto; }
+    .intro h1 {
+      font-family: var(--display); font-weight: 700; font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--or); margin-top: 1.25rem; letter-spacing: 0.04em;
+    }
+    .intro .line { width: 64px; height: 1px; background: var(--or); margin: 1.25rem auto; }
+    .intro p { max-width: 28rem; margin: 0 auto; font-size: 1.1rem; line-height: 1.55; color: color-mix(in srgb, var(--papier) 85%, transparent); }
+    .doc-plane {
+      min-height: 70svh; position: relative; display: grid; align-items: end;
+      background:
+        linear-gradient(180deg, transparent 30%, rgba(12,11,10,0.92) 100%),
+        radial-gradient(ellipse at 40% 40%, #3a3228 0%, #1a1612 55%, #0c0b0a 100%);
+      padding: 4rem 4vw;
+    }
+    .doc-plane .label {
+      font-family: var(--ui); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--or);
+    }
+    .doc-plane h2 {
+      font-family: var(--display); font-size: clamp(2rem, 5vw, 3.75rem); max-width: 16ch;
+      line-height: 1.05; margin-top: 0.75rem;
+    }
+    .salle { padding: 5rem 4vw; border-top: 1px solid var(--pierre); }
+    .salle .kicker {
+      font-family: var(--ui); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--or);
+    }
+    .salle h3 {
+      font-family: var(--display); font-size: clamp(1.75rem, 3.5vw, 2.75rem); margin: 0.75rem 0 2rem;
+    }
+    .cartels { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    .cartel { border-top: 1px solid var(--pierre); padding-top: 1rem; }
+    .cartel.large { grid-row: span 1; }
+    .cartel .meta { font-family: var(--ui); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--papier) 45%, transparent); }
+    .cartel h4 { font-family: var(--display); font-size: 1.35rem; margin: 0.5rem 0; font-weight: 500; }
+    .cartel p { font-size: 0.95rem; line-height: 1.55; color: color-mix(in srgb, var(--papier) 65%, transparent); }
+    .split { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3rem; align-items: center; }
+    .vitrine {
+      aspect-ratio: 4/3;
+      background:
+        linear-gradient(135deg, rgba(184,151,74,0.12), transparent 40%),
+        linear-gradient(180deg, #2a241c, #12100e);
+      border: 1px solid var(--pierre);
+      position: relative;
+    }
+    .vitrine .inv {
+      position: absolute; bottom: 0.75rem; left: 0.75rem;
+      font-family: var(--ui); font-size: 10px; letter-spacing: 0.14em; color: var(--or);
+    }
+    .archives { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .piece {
+      aspect-ratio: 3/4; background: var(--mur); border: 1px solid var(--pierre);
+      padding: 0.75rem; display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .piece.recon { border-color: var(--rouge); }
+    .piece .tag { font-family: var(--ui); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; }
+    .piece.recon .tag { color: #e8b4b4; }
+    .geo { display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem; }
+    .geo aside { border-left: 1px solid var(--or); padding-left: 1.25rem; font-size: 0.95rem; line-height: 1.6; color: color-mix(in srgb, var(--papier) 70%, transparent); }
+    .frise { display: flex; gap: 1.5rem; overflow-x: auto; padding-bottom: 0.5rem; }
+    .frise .item { min-width: 220px; border-top: 1px solid var(--pierre); padding-top: 0.75rem; }
+    .proj {
+      background: var(--mur); padding: 2rem; border: 1px solid var(--pierre);
+      display: grid; grid-template-columns: 1.6fr 1fr; gap: 2rem; align-items: center;
+    }
+    .screen { aspect-ratio: 16/9; background: #050505; display: grid; place-items: center; color: var(--or); font-family: var(--ui); letter-spacing: 0.2em; }
+    footer { padding: 3rem 4vw; border-top: 1px solid var(--pierre); font-family: var(--ui); font-size: 12px; color: color-mix(in srgb, var(--papier) 45%, transparent); }
+    @media (max-width: 900px) {
+      .cartels, .split, .archives, .geo, .proj { grid-template-columns: 1fr; }
+      .archives { grid-template-columns: 1fr 1fr; }
+      header nav { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="badge">Maquette A — Musée documentaire · démo fictive · pas de refonte app</div>
+  <header>
+    <strong style="color:var(--papier)">LE 88ÈME ÉCHO</strong>
+    <nav>
+      <a href="#">Accueil</a><a href="#">Actualités</a><a href="#">Histoire</a><a href="#">Géopolitique</a>
+      <a href="#">Diasporas</a><a href="#">Documentaires</a><a href="#">Archives</a><a href="#">À propos</a>
+    </nav>
+  </header>
+
+  <section class="intro" aria-label="Seuil">
+    <div>
+      <img class="logo" src="logo-88eme-echo.png" alt="Logo LE 88ÈME ÉCHO" />
+      <h1>LE 88ÈME ÉCHO</h1>
+      <div class="line"></div>
+      <p>Un musée vivant des mémoires africaines — archives, lacunes, et enquêtes à partir de sources vérifiables.</p>
+    </div>
+  </section>
+
+  <section class="doc-plane" aria-label="Image documentaire">
+    <div>
+      <p class="label">Plan documentaire · placeholder</p>
+      <h2>Ce que les silences documentaires refusent encore de dire</h2>
+    </div>
+  </section>
+
+  <section class="salle">
+    <p class="kicker">Salle 01</p>
+    <h3>L’Afrique aujourd’hui</h3>
+    <div class="cartels">
+      <article class="cartel large">
+        <p class="meta">Information contemporaine vérifiée · démo</p>
+        <h4>Veille continentale — structure de salle, pas de faits affirmés</h4>
+        <p>Cartel principal. Une information, une provenance, une date. Qualité avant quantité.</p>
+      </article>
+      <article class="cartel">
+        <p class="meta">Brève</p>
+        <h4>Note de suivi</h4>
+        <p>Placeholder secondaire.</p>
+      </article>
+      <article class="cartel">
+        <p class="meta">Brève</p>
+        <h4>Note de suivi</h4>
+        <p>Placeholder secondaire.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="salle">
+    <p class="kicker">Salle 02</p>
+    <h3>Les histoires oubliées</h3>
+    <div class="split">
+      <div>
+        <p class="meta" style="font-family:var(--ui);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--or)">Interprétation historique · démo</p>
+        <h4 style="font-family:var(--display);font-size:clamp(1.5rem,3vw,2.25rem);margin:0.75rem 0 1rem;font-weight:500">Relire les inventaires sans combler les trous</h4>
+        <p style="line-height:1.65;color:color-mix(in srgb,var(--papier) 70%,transparent)">L’absence de preuve n’est jamais une preuve. Ici le texte muséal accompagne l’image sans l’écraser.</p>
+      </div>
+      <div class="vitrine"><span class="inv">INV. 88-DEMO-014</span></div>
+    </div>
+  </section>
+
+  <section class="salle">
+    <p class="kicker">Salle 03</p>
+    <h3>Les archives parlent</h3>
+    <div class="archives">
+      <div class="piece"><span class="tag" style="color:var(--or)">Archive</span><p style="margin-top:.5rem;font-family:var(--ui);font-size:12px">Fonds A · provenance indiquée</p></div>
+      <div class="piece"><span class="tag" style="color:var(--or)">Archive</span><p style="margin-top:.5rem;font-family:var(--ui);font-size:12px">Fonds B · lacune notée</p></div>
+      <div class="piece recon"><span class="tag">Reconstitution IA</span><p style="margin-top:.5rem;font-family:var(--ui);font-size:12px">Label obligatoire · fiche</p></div>
+      <div class="piece"><span class="tag" style="color:var(--or)">Archive</span><p style="margin-top:.5rem;font-family:var(--ui);font-size:12px">Fonds C · date incertaine</p></div>
+    </div>
+  </section>
+
+  <section class="salle">
+    <p class="kicker">Salle 04</p>
+    <h3>Géopolitique</h3>
+    <div class="geo">
+      <aside>
+        Distinguer faits, déclarations officielles et analyses. Aucune intention d’État sans élément documenté.
+      </aside>
+      <div>
+        <h4 style="font-family:var(--display);font-size:1.75rem;margin-bottom:0.75rem">Lecture documentée (démo)</h4>
+        <p style="line-height:1.6;color:color-mix(in srgb,var(--papier) 65%,transparent)">Colonne principale pour l’analyse géopolitique — étiquetée, sourcée, jamais spéculative.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="salle">
+    <p class="kicker">Salle 05</p>
+    <h3>Diasporas</h3>
+    <div class="frise">
+      <div class="item"><h4 style="font-family:var(--display);font-size:1.2rem">Transmission</h4><p style="font-size:.9rem;margin-top:.4rem;opacity:.7">Mémoires en circulation</p></div>
+      <div class="item"><h4 style="font-family:var(--display);font-size:1.2rem">Trajectoires</h4><p style="font-size:.9rem;margin-top:.4rem;opacity:.7">Placeholder</p></div>
+      <div class="item"><h4 style="font-family:var(--display);font-size:1.2rem">Langues</h4><p style="font-size:.9rem;margin-top:.4rem;opacity:.7">Placeholder</p></div>
+      <div class="item"><h4 style="font-family:var(--display);font-size:1.2rem">Retours</h4><p style="font-size:.9rem;margin-top:.4rem;opacity:.7">Placeholder</p></div>
+    </div>
+  </section>
+
+  <section class="salle">
+    <p class="kicker">Salle 06</p>
+    <h3>Documentaires</h3>
+    <div class="proj">
+      <div class="screen">SALLE DE PROJECTION</div>
+      <div>
+        <p class="meta" style="font-family:var(--ui);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--or)">Format long · démo</p>
+        <h4 style="font-family:var(--display);font-size:1.5rem;margin:.5rem 0">Un film, une salle — focus unique</h4>
+        <p style="opacity:.7;line-height:1.5">Les secondaires passent après le plan principal.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>Direction A · Musée documentaire · LE 88ÈME ÉCHO · Mémoire vivante</footer>
+</body>
+</html>

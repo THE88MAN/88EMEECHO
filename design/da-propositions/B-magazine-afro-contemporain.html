@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>B — Magazine afro-contemporain · LE 88ÈME ÉCHO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --encre: #0a0a0a;
+      --or: #d4a84b;
+      --ivoire: #f4efe6;
+      --terre: #2c241c;
+      --laque: #7a1f1f;
+      --vert: #1f3a2e;
+      --display: "Playfair Display", Georgia, serif;
+      --ui: "DM Sans", system-ui, sans-serif;
+      --body: "Source Sans 3", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--encre); color: var(--ivoire); font-family: var(--body); }
+    .badge {
+      background: var(--laque); text-align: center; padding: 0.5rem;
+      font-family: var(--ui); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    }
+    .cover {
+      min-height: 100svh; position: relative; display: grid;
+      grid-template-rows: auto 1fr auto;
+      background:
+        radial-gradient(ellipse at 70% 30%, rgba(212,168,75,0.18), transparent 50%),
+        linear-gradient(160deg, #1a1410 0%, #0a0a0a 45%, #1f1512 100%);
+      padding: 1.25rem 4vw 3rem;
+    }
+    .cover-top {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+      font-family: var(--ui); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .cover-top nav { display: flex; gap: 1rem; flex-wrap: wrap; max-width: 70%; justify-content: flex-end; }
+    .cover-top a { color: color-mix(in srgb, var(--ivoire) 70%, transparent); text-decoration: none; }
+    .cover-mid { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; align-items: end; margin-top: 3rem; }
+    .cover-mid img { width: 140px; height: auto; }
+    .cover-art {
+      min-height: 42vh;
+      background:
+        linear-gradient(180deg, transparent 40%, rgba(10,10,10,0.85)),
+        radial-gradient(circle at 50% 40%, #5a4030, #1a1210 70%);
+      position: relative;
+    }
+    .cover-art span {
+      position: absolute; bottom: 1rem; left: 1rem;
+      font-family: var(--ui); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--or);
+    }
+    .cover h1 {
+      font-family: var(--display); font-weight: 800; font-size: clamp(3rem, 9vw, 6.5rem);
+      line-height: 0.92; letter-spacing: -0.02em; margin-top: 1.5rem; max-width: 12ch;
+    }
+    .cover .dek { max-width: 32rem; margin-top: 1rem; font-size: 1.1rem; line-height: 1.5; opacity: 0.85; }
+    .sec { padding: 4.5rem 4vw; }
+    .sec.alt { background: var(--terre); }
+    .sec.vert { background: var(--vert); }
+    .kicker { font-family: var(--ui); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--or); }
+    .sec h2 { font-family: var(--display); font-size: clamp(2rem, 4.5vw, 3.25rem); margin: 0.6rem 0 2rem; line-height: 1.05; }
+    .mosaic {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr; grid-template-rows: auto auto; gap: 1.25rem;
+    }
+    .mosaic .big { grid-row: span 2; min-height: 420px; background: linear-gradient(145deg, #3a2a20, #12100e); padding: 1.25rem; display: flex; flex-direction: column; justify-content: flex-end; position: relative; }
+    .mosaic .sm { min-height: 190px; background: #151210; padding: 1rem; display: flex; flex-direction: column; justify-content: flex-end; border-left: 3px solid var(--or); }
+    .mosaic h3 { font-family: var(--display); font-size: 1.5rem; }
+    .mosaic .meta { font-family: var(--ui); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; margin-bottom: 0.4rem; }
+    .spread { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 0; align-items: stretch; }
+    .spread .txt { padding: 2rem 2rem 2rem 0; }
+    .spread .img {
+      min-height: 420px; margin-left: -8%;
+      background: radial-gradient(ellipse at 40% 35%, #6b4a32, #0f0c0a 70%);
+      border: 1px solid color-mix(in srgb, var(--or) 35%, transparent);
+    }
+    .spread h3 { font-family: var(--display); font-size: clamp(1.75rem, 3vw, 2.5rem); margin: 0.75rem 0; }
+    .contact { display: flex; gap: 0.75rem; overflow-x: auto; }
+    .contact .frame {
+      flex: 0 0 160px; aspect-ratio: 3/4; background: #1a1612;
+      border: 1px solid #3a322c; font-family: var(--ui); font-size: 10px; letter-spacing: 0.12em;
+      text-transform: uppercase; display: grid; place-items: end start; padding: 0.5rem; color: var(--or);
+    }
+    .contact .frame.ia { border-color: var(--laque); color: #f0c0c0; }
+    .geo-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 1.5rem; }
+    .geo-grid .lead { font-family: var(--display); font-size: clamp(1.75rem, 3vw, 2.75rem); line-height: 1.1; }
+    .chip { border-top: 1px solid color-mix(in srgb, var(--ivoire) 25%, transparent); padding-top: 0.75rem; }
+    .chip strong { display: block; font-family: var(--ui); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--or); margin-bottom: 0.4rem; }
+    .quote-block { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 2rem; align-items: center; }
+    .quote-block blockquote { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.25rem); line-height: 1.25; }
+    .portrait { aspect-ratio: 4/5; background: linear-gradient(180deg, #4a3228, #120e0c); }
+    .vids { display: grid; grid-template-columns: 1.4fr 0.7fr 0.7fr; gap: 1rem; align-items: end; }
+    .vids .v { background: #141210; border: 1px solid #2a2420; }
+    .vids .v16 { aspect-ratio: 16/9; }
+    .vids .v91 { aspect-ratio: 9/16; max-height: 360px; }
+    .vids .v11 { aspect-ratio: 1/1; }
+    .vids p { font-family: var(--ui); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.5rem; color: var(--or); }
+    footer { padding: 2.5rem 4vw; border-top: 1px solid #2a2420; font-family: var(--ui); font-size: 12px; opacity: 0.5; }
+    @media (max-width: 900px) {
+      .cover-mid, .mosaic, .spread, .geo-grid, .quote-block, .vids { grid-template-columns: 1fr; }
+      .mosaic .big { grid-row: auto; min-height: 280px; }
+      .spread .img { margin-left: 0; }
+      .cover-top nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="badge">Maquette B — Magazine afro-contemporain · démo fictive · pas de refonte app</div>
+  <section class="cover">
+    <div class="cover-top">
+      <strong>LE 88ÈME ÉCHO</strong>
+      <nav>
+        <a href="#">Accueil</a><a href="#">Actualités</a><a href="#">Histoire</a><a href="#">Géo</a>
+        <a href="#">Diasporas</a><a href="#">Docs</a><a href="#">Archives</a><a href="#">À propos</a>
+      </nav>
+    </div>
+    <div class="cover-mid">
+      <img src="logo-88eme-echo.png" alt="Logo 88" />
+      <div class="cover-art"><span>Image documentaire · placeholder couverture</span></div>
+    </div>
+    <div>
+      <h1>Mémoire vivante</h1>
+      <p class="dek">Documenter le continent et ses diasporas — faits, archives, lectures. Jamais une hypothèse en certitude.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <p class="kicker">01 · L’Afrique aujourd’hui</p>
+    <h2>Ce qui se joue maintenant</h2>
+    <div class="mosaic">
+      <article class="big">
+        <p class="meta">Une · information vérifiée (démo)</p>
+        <h3>Mosaïque asymétrique — un grand récit, trois brèves</h3>
+      </article>
+      <article class="sm"><p class="meta">Brève</p><h3 style="font-size:1.15rem">Note A</h3></article>
+      <article class="sm"><p class="meta">Brève</p><h3 style="font-size:1.15rem">Note B</h3></article>
+      <article class="sm"><p class="meta">Brève</p><h3 style="font-size:1.15rem">Note C</h3></article>
+      <article class="sm"><p class="meta">Brève</p><h3 style="font-size:1.15rem">Note D</h3></article>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <p class="kicker">02 · Les histoires oubliées</p>
+    <h2>Double page</h2>
+    <div class="spread">
+      <div class="txt">
+        <p class="meta" style="font-family:var(--ui);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--or)">Interprétation historique · démo</p>
+        <h3>Quand le titre mord l’image</h3>
+        <p style="line-height:1.6;opacity:.8;margin-top:1rem">Tension magazine : texte dense à gauche, portrait documentaire qui déborde volontairement. Pas de carte uniforme.</p>
+      </div>
+      <div class="img" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <p class="kicker">03 · Les archives parlent</p>
+    <h2>Planche contact</h2>
+    <div class="contact">
+      <div class="frame">Archive 01</div>
+      <div class="frame">Archive 02</div>
+      <div class="frame ia">Reconstitution IA</div>
+      <div class="frame">Archive 03</div>
+      <div class="frame">Archive 04</div>
+      <div class="frame">Archive 05</div>
+    </div>
+  </section>
+
+  <section class="sec alt">
+    <p class="kicker">04 · Géopolitique</p>
+    <h2>Faits · déclarations · lectures</h2>
+    <div class="geo-grid">
+      <p class="lead">Étiqueter chaque couche — jamais confondre.</p>
+      <div class="chip"><strong>Fait</strong><p>Placeholder factuel</p></div>
+      <div class="chip"><strong>Déclaration</strong><p>Placeholder officiel</p></div>
+      <div class="chip"><strong>Analyse</strong><p>Placeholder éditorial</p></div>
+    </div>
+  </section>
+
+  <section class="sec vert">
+    <p class="kicker" style="color:#d4b87a">05 · Diasporas</p>
+    <h2>Voix & transmissions</h2>
+    <div class="quote-block">
+      <blockquote>« La mémoire circule — elle ne se résume pas. » <span style="display:block;font-family:var(--ui);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-top:1rem;opacity:.7">Témoignage · démo</span></blockquote>
+      <div class="portrait" aria-label="Portrait placeholder"></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <p class="kicker">06 · Documentaires</p>
+    <h2>Formats qui cassent la grille</h2>
+    <div class="vids">
+      <div><div class="v v16"></div><p>16:9</p></div>
+      <div><div class="v v91"></div><p>9:16</p></div>
+      <div><div class="v v11"></div><p>1:1</p></div>
+    </div>
+  </section>
+
+  <footer>Direction B · Magazine afro-contemporain · LE 88ÈME ÉCHO · Mémoire vivante</footer>
+</body>
+</html>
