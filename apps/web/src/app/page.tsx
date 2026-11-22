@@ -1,15 +1,21 @@
-import { HomeHero } from "@/components/HomeHero";
-import { HomeSections } from "@/components/HomeSections";
-import { HomeUne } from "@/components/HomeUne";
-import { HomeVideos } from "@/components/HomeVideos";
+import { HomeAfriqueAujourdhui } from "@/components/home/HomeAfriqueAujourdhui";
+import { HomeArchivesParlent } from "@/components/home/HomeArchivesParlent";
+import { HomeDiasporas } from "@/components/home/HomeDiasporas";
+import { HomeDocumentaires } from "@/components/home/HomeDocumentaires";
+import { HomeGeopolitique } from "@/components/home/HomeGeopolitique";
+import { HomeHistoiresOubliees } from "@/components/home/HomeHistoiresOubliees";
+import { HomeIntro } from "@/components/home/HomeIntro";
 
 export default function HomePage() {
   return (
     <>
-      <HomeHero />
-      <HomeUne />
-      <HomeSections />
-      <HomeVideos />
+      <HomeIntro />
+      <HomeAfriqueAujourdhui />
+      <HomeHistoiresOubliees />
+      <HomeArchivesParlent />
+      <HomeGeopolitique />
+      <HomeDiasporas />
+      <HomeDocumentaires />
     </>
   );
 }
