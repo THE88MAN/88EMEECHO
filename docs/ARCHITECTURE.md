@@ -11,7 +11,7 @@ Voir aussi la synthèse Context : architecture projet.
 | Fonts | Cormorant Garamond (display) + Source Sans 3 (UI) |
 | Données | PostgreSQL via Supabase — migrations dans `supabase/migrations/` |
 | Auth | Stub admin ; Supabase Auth prévu Phase 2 |
-| Déploiement cible | Vercel → 88emeecho.com (après autorisation) |
+| Déploiement cible | Vercel → 88.com (après autorisation) |
 | Preview | Cursor publish-app / preview locale |
 
 ## Arborescence
@@ -39,4 +39,4 @@ supabase/migrations/
 
 ## Hors scope Phase 1
 
-Agents ÉCHO, veille 54 États, CMS complet, Storage, SEO production, déploiement 88emeecho.com.
+Agents ÉCHO, veille 54 États, CMS complet, Storage, SEO production, déploiement 88.com.

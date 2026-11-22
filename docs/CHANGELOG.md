@@ -1,5 +1,16 @@
 # CHANGELOG — LE 88ÈME ÉCHO
 
+## [0.6.0] — 2026-11-22 — Phase 6 production prep
+
+### Ajouté
+- Suite `npm test` (Nofi, gate charte, distribution, readiness).
+- Admin `/admin/readiness` — `productionDeployAllowed=false`.
+- Headers sécurité Next.js ; doc `PRODUCTION_READINESS.md`.
+- Migration SQL `007_phase6_readiness_audit.sql`.
+
+### Non fait
+- **Aucun déploiement** sur 88.com.
+
 ## [0.2.0] — 2026-11-21 — Refonte Mémoire vivante (hybride A+B+C)
 
 ### Ajouté / modifié
