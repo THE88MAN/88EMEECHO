@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ContentLabelBadge } from "@/components/cms/ContentLabelBadge";
+import { SeoJsonLd } from "@/components/SeoJsonLd";
+import { ShareButtons } from "@/components/ShareButtons";
 import {
   getPublishedArticleBySlug,
   getSourcesByIds,
@@ -9,6 +11,11 @@ import {
   listPublicCorrections,
   rubricTitle,
 } from "@/lib/cms";
+import {
+  articleJsonLd,
+  articleMetadata,
+  breadcrumbJsonLd,
+} from "@/lib/distribution";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -20,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const article = getPublishedArticleBySlug(slug);
   if (!article) return { title: "Article" };
-  return { title: article.title, description: article.dek };
+  return articleMetadata(article);
 }
 
 export default async function ArticlePage({ params }: Props) {
@@ -34,8 +41,23 @@ export default async function ArticlePage({ params }: Props) {
   );
   const paragraphs = article.body.split(/\n\n+/);
 
+  const path = `/articles/${article.slug}`;
+
   return (
     <article className="bg-ink">
+      <SeoJsonLd
+        data={[
+          articleJsonLd(article),
+          breadcrumbJsonLd([
+            { name: "Accueil", path: "/" },
+            {
+              name: rubricTitle(article.rubricSlug),
+              path: `/${article.rubricSlug}`,
+            },
+            { name: article.title, path },
+          ]),
+        ]}
+      />
       <header className="border-b border-anthracite-light">
         <div className="mx-auto max-w-3xl px-[4vw] py-14 md:py-20">
           <ContentLabelBadge label={article.contentLabel} />
@@ -138,7 +160,11 @@ export default async function ArticlePage({ params }: Props) {
           </section>
         )}
 
-        <nav className="mt-14 flex flex-wrap gap-6 border-t border-anthracite-light pt-8">
+        <div className="mt-14">
+          <ShareButtons path={path} title={article.title} />
+        </div>
+
+        <nav className="mt-10 flex flex-wrap gap-6 border-t border-anthracite-light pt-8">
           <Link
             href={`/${article.rubricSlug}`}
             className="font-sans text-[11px] uppercase tracking-[0.2em] text-gold"
@@ -150,6 +176,12 @@ export default async function ArticlePage({ params }: Props) {
             className="font-sans text-[11px] uppercase tracking-[0.2em] text-parchment/50 hover:text-gold"
           >
             Bibliothèque
+          </Link>
+          <Link
+            href="/feed.xml"
+            className="font-sans text-[11px] uppercase tracking-[0.2em] text-parchment/50 hover:text-gold"
+          >
+            RSS
           </Link>
         </nav>
       </div>

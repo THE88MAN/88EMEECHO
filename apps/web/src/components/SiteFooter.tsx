@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { NewsletterForm } from "@/components/NewsletterForm";
 import { listForbiddenSourceNames } from "@/lib/editorial";
 
 export function SiteFooter() {
@@ -7,7 +8,7 @@ export function SiteFooter() {
 
   return (
     <footer className="border-t border-anthracite-light bg-ink-soft">
-      <div className="mx-auto grid max-w-salle gap-8 px-[4vw] py-12 md:grid-cols-3">
+      <div className="mx-auto grid max-w-salle gap-8 px-[4vw] py-12 md:grid-cols-4">
         <div>
           <Link href="/" aria-label="LE 88ÈME ÉCHO — Accueil">
             <Image
@@ -55,10 +56,36 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <p className="section-kicker">Sources interdites</p>
+          <p className="section-kicker">Distribution</p>
+          <ul className="mt-3 space-y-2 font-sans text-sm text-parchment/75">
+            <li>
+              <Link href="/newsletter" className="hover:text-gold">
+                Newsletter
+              </Link>
+            </li>
+            <li>
+              <Link href="/abonnement" className="hover:text-gold">
+                Abonnements
+              </Link>
+            </li>
+            <li>
+              <Link href="/feed.xml" className="hover:text-gold">
+                Flux RSS
+              </Link>
+            </li>
+            <li>
+              <Link href="/sitemap.xml" className="hover:text-gold">
+                Sitemap
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p className="section-kicker">Newsletter</p>
           <p className="mt-3 font-serif text-sm leading-relaxed text-parchment/65">
-            Ne jamais utiliser comme sources éditoriales : {forbidden}.
+            Stub — pas d’envoi réel. Sources interdites : {forbidden}.
           </p>
+          <NewsletterForm source="footer" compact />
         </div>
       </div>
       <div className="border-t border-white/5 px-[4vw] py-4 text-center font-sans text-[11px] tracking-wide text-parchment/45">

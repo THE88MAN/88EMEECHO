@@ -35,14 +35,14 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="mx-auto max-w-salle px-[4vw] py-14 md:py-20">
-      <p className="section-kicker">Administration · Phase 2–4</p>
+      <p className="section-kicker">Administration · Phase 2–5</p>
       <h1 className="mt-3 font-display text-4xl text-parchment">
         CMS éditorial
       </h1>
       <p className="mt-4 max-w-2xl font-serif text-parchment/70">
         Publier, modifier, archiver, statuts — stubs locaux. Auth Supabase
         réelle optionnelle ({db.configured ? "configurée" : "non branchée"}).
-        Agents ÉCHO : VEILLE, ARCHIVES, FACT-CHECK, VISUEL, ÉDITION — sans
+        Agents ÉCHO + distribution (SEO, newsletter, stats stubs) — sans
         auto-publish ni contournement de charte.
       </p>
 
@@ -52,6 +52,12 @@ export default function AdminDashboardPage() {
           className="border border-gold/60 bg-gold/10 px-4 py-2 font-sans text-[11px] uppercase tracking-[0.18em] text-gold hover:bg-gold hover:text-ink"
         >
           Agents ÉCHO
+        </Link>
+        <Link
+          href="/admin/distribution"
+          className="border border-gold/40 px-4 py-2 font-sans text-[11px] uppercase tracking-[0.18em] text-gold hover:border-gold hover:bg-gold/10"
+        >
+          Distribution
         </Link>
         <Link
           href="/admin/veille"

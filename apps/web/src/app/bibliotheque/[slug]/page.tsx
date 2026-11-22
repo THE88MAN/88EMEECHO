@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { SeoJsonLd } from "@/components/SeoJsonLd";
+import { ShareButtons } from "@/components/ShareButtons";
 import {
   articleHref,
   getFacetsByIds,
@@ -11,6 +13,10 @@ import {
 } from "@/lib/cms";
 import { cmsArticles } from "@/lib/cms/seed";
 import type { CmsArticle } from "@/lib/cms/types";
+import {
+  breadcrumbJsonLd,
+  dossierMetadata,
+} from "@/lib/distribution";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -28,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const d = getPublishedDossierBySlug(slug);
   if (!d) return { title: "Dossier" };
-  return { title: d.title, description: d.summary };
+  return dossierMetadata(d);
 }
 
 export default async function DossierPage({ params }: Props) {
@@ -39,9 +45,17 @@ export default async function DossierPage({ params }: Props) {
   const facets = getFacetsByIds(dossier.facetIds);
   const sources = getSourcesByIds(dossier.sourceIds);
   const articles = articlesForDossier(dossier.articleIds);
+  const path = `/bibliotheque/${dossier.slug}`;
 
   return (
     <div className="bg-ink">
+      <SeoJsonLd
+        data={breadcrumbJsonLd([
+          { name: "Accueil", path: "/" },
+          { name: "Bibliothèque", path: "/bibliotheque" },
+          { name: dossier.title, path },
+        ])}
+      />
       <header className="border-b border-anthracite-light">
         <div className="mx-auto max-w-salle px-[4vw] py-14 md:py-20">
           <p className="section-kicker">Dossier bibliothèque · démo</p>
@@ -210,6 +224,7 @@ export default async function DossierPage({ params }: Props) {
               Catalogue →
             </Link>
           </div>
+          <ShareButtons path={path} title={dossier.title} />
           <Link
             href="/bibliotheque"
             className="inline-block font-sans text-[11px] uppercase tracking-[0.2em] text-gold"
