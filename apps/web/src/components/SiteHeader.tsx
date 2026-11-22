@@ -29,12 +29,13 @@ export function SiteHeader() {
           aria-label="LE 88ÈME ÉCHO — Accueil"
         >
           <Image
-            src="/logo-88eme-echo.png"
-            alt="LE 88ÈME ÉCHO"
-            width={56}
-            height={56}
-            className="h-10 w-10 object-contain md:h-11 md:w-11"
+            src="/logo-88-mark.png"
+            alt=""
+            width={72}
+            height={53}
+            className="h-8 w-auto object-contain md:h-9"
             priority
+            aria-hidden
           />
         </Link>
 

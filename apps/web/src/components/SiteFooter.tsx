@@ -11,11 +11,12 @@ export function SiteFooter() {
         <div>
           <Link href="/" aria-label="LE 88ÈME ÉCHO — Accueil">
             <Image
-              src="/logo-88eme-echo.png"
-              alt="LE 88ÈME ÉCHO"
-              width={96}
-              height={96}
-              className="h-16 w-16 object-contain"
+              src="/logo-88-mark.png"
+              alt=""
+              width={120}
+              height={88}
+              className="h-12 w-auto object-contain"
+              aria-hidden
             />
           </Link>
           <p className="mt-4 max-w-sm font-serif text-sm leading-relaxed text-parchment/70">

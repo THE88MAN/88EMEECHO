@@ -9,7 +9,7 @@ export function HomeIntro() {
   const reduce = useReducedMotion();
 
   return (
-    <section aria-label="Intro immersive — Mémoire vivante" className="bg-ink">
+    <section aria-label="LE 88ÈME ÉCHO — Intro immersive" className="bg-ink">
       {/* C : carton / seuil logo */}
       <div className="relative flex min-h-[88svh] flex-col items-center justify-center px-[4vw] py-20 text-center md:min-h-[100svh]">
         <div
@@ -20,7 +20,6 @@ export function HomeIntro() {
           }}
           aria-hidden
         />
-        <h1 className="sr-only">LE 88ÈME ÉCHO</h1>
         <motion.div
           initial={reduce ? false : "hidden"}
           animate="visible"
@@ -28,13 +27,15 @@ export function HomeIntro() {
           transition={easeOutSoft}
           className="relative z-10"
         >
+          {/* Monogramme 88 seul — pas de wordmark HTML ni PNG sous le signe */}
           <Image
-            src="/logo-88eme-echo.png"
-            alt="LE 88ÈME ÉCHO"
-            width={280}
-            height={280}
-            className="mx-auto h-40 w-40 object-contain sm:h-52 sm:w-52 md:h-60 md:w-60"
+            src="/logo-88-mark.png"
+            alt=""
+            width={320}
+            height={236}
+            className="mx-auto h-28 w-auto object-contain sm:h-36 md:h-44"
             priority
+            aria-hidden
           />
         </motion.div>
         <motion.div
