@@ -28,13 +28,28 @@ export function SiteFooter() {
           <p className="section-kicker">Gouvernance</p>
           <ul className="mt-3 space-y-2 font-sans text-sm text-parchment/75">
             <li>
+              <Link href="/bibliotheque" className="hover:text-gold">
+                Bibliothèque historique
+              </Link>
+            </li>
+            <li>
+              <Link href="/sources" className="hover:text-gold">
+                Sources consultables
+              </Link>
+            </li>
+            <li>
+              <Link href="/corrections" className="hover:text-gold">
+                Historique des corrections
+              </Link>
+            </li>
+            <li>
               <Link href="/a-propos" className="hover:text-gold">
                 À propos & charte
               </Link>
             </li>
             <li>
               <Link href="/admin" className="hover:text-gold">
-                Espace admin (stub)
+                Espace admin (CMS)
               </Link>
             </li>
           </ul>
