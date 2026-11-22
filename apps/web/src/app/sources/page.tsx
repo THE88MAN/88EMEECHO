@@ -19,9 +19,10 @@ export default function SourcesPage() {
         Sources consultables
       </h1>
       <p className="mt-4 max-w-2xl font-serif text-base text-parchment/70">
-        Catalogue Phase 2 (seed démo). Les sources journalistiques interdites
-        par la charte restent exclues techniquement — elles ne sont jamais
-        attachables à un article ou un dossier.
+        Catalogue (seed démo). Sources africaines et antillaises / caribéennes
+        internes autorisées. Les sources journalistiques interdites restent
+        exclues techniquement — jamais attachables à un article, dossier ou
+        item de veille.
       </p>
 
       <section className="mt-12">

@@ -27,8 +27,9 @@ export default function AProposPage() {
         <p className="mt-3 text-parchment/70 leading-relaxed">
           Documenter les événements historiques et contemporains à partir de
           sources vérifiables, en privilégiant les archives, les chercheurs et
-          les médias africains. Refuser les récits simplificateurs et les
-          affirmations non vérifiées.
+          les médias africains, ainsi que les sources antillaises et caribéennes
+          internes. Veille et publication publiques francophones. Refuser les
+          récits simplificateurs et les affirmations non vérifiées.
         </p>
       </section>
 
@@ -51,7 +52,8 @@ export default function AProposPage() {
         </h2>
         <p className="mt-3 text-parchment/70 leading-relaxed">
           Ne jamais utiliser comme sources éditoriales, ni reprendre leurs
-          articles même indirectement via agrégateurs :
+          articles même indirectement via agrégateurs. Pour Nofi : interdiction
+          de toute la marque (sites, miroirs, sous-marques, comptes officiels).
         </p>
         <ul className="mt-3 flex flex-wrap gap-3">
           {forbidden.map((name) => (

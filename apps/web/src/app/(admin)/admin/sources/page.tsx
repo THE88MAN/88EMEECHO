@@ -13,8 +13,9 @@ export default function AdminSourcesPage() {
       <p className="section-kicker">CMS</p>
       <h1 className="mt-3 font-display text-4xl text-parchment">Sources</h1>
       <p className="mt-3 max-w-2xl font-serif text-sm text-parchment/60">
-        Gestion consultable. Les sources interdites (RFI, Le Monde, Jeune
-        Afrique) sont verrouillées — trigger SQL + filtre TS.
+        Gestion consultable. Sources interdites (RFI, Le Monde, Jeune Afrique,
+        Nofi) verrouillées — trigger SQL + filtre TS. Sources africaines et
+        antillaises / caribéennes internes autorisées (évaluées).
       </p>
 
       <ul className="mt-10 divide-y divide-anthracite-light border-y border-anthracite-light">

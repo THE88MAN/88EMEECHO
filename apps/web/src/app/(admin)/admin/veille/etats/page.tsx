@@ -17,8 +17,9 @@ export default function VeilleEtatsPage() {
         Couverture — {AFRICAN_STATES.length} États
       </h1>
       <p className="mt-4 max-w-2xl font-serif text-parchment/70">
-        Langues de veille multi (ar, en, es, fr, pt selon pays). Sortie
-        publique toujours en français après rédaction.
+        Veille courante <strong className="text-parchment">francophone</strong>{" "}
+        uniquement (watchLanguages = fr). Sortie publique en français. Les
+        langues non-FR ne sont pas prioritaires pour la couverture courante.
       </p>
 
       <div className="mt-12 space-y-10">
