@@ -6,8 +6,18 @@ import {
   Source_Serif_4,
 } from "next/font/google";
 import { DemoBanner } from "@/components/DemoBanner";
+import { SeoJsonLd } from "@/components/SeoJsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import {
+  absoluteUrl,
+  buildOpenGraph,
+  buildTwitter,
+  organizationJsonLd,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/distribution";
 import "./globals.css";
 
 const display = Fraunces({
@@ -39,15 +49,38 @@ const serif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "LE 88ÈME ÉCHO",
-    template: "%s · LE 88ÈME ÉCHO",
+    default: SITE_NAME,
+    template: `%s · ${SITE_NAME}`,
   },
-  description:
-    "Média documentaire indépendant — histoire africaine, diasporas, mémoires oubliées, géopolitique. Domaine : 88emeecho.com.",
+  description: `${SITE_DESCRIPTION} Domaine : 88emeecho.com.`,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  alternates: {
+    canonical: "/",
+    types: {
+      "application/rss+xml": absoluteUrl("/feed.xml"),
+    },
+  },
+  openGraph: buildOpenGraph({
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    path: "/",
+  }),
+  twitter: buildTwitter({
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+  }),
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 
@@ -61,6 +94,7 @@ export default function RootLayout({
       <body
         className={`${display.variable} ${carton.variable} ${sans.variable} ${serif.variable} min-h-screen bg-ink text-parchment antialiased`}
       >
+        <SeoJsonLd data={organizationJsonLd()} />
         <DemoBanner />
         <SiteHeader />
         <main>{children}</main>
