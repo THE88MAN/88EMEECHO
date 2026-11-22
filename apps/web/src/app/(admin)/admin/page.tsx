@@ -35,7 +35,7 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="mx-auto max-w-salle px-[4vw] py-14 md:py-20">
-      <p className="section-kicker">Administration · Phase 2–5</p>
+      <p className="section-kicker">Administration · Phase 2–6</p>
       <h1 className="mt-3 font-display text-4xl text-parchment">
         CMS éditorial
       </h1>
@@ -58,6 +58,12 @@ export default function AdminDashboardPage() {
           className="border border-gold/40 px-4 py-2 font-sans text-[11px] uppercase tracking-[0.18em] text-gold hover:border-gold hover:bg-gold/10"
         >
           Distribution
+        </Link>
+        <Link
+          href="/admin/readiness"
+          className="border border-crimson/50 px-4 py-2 font-sans text-[11px] uppercase tracking-[0.18em] text-crimson hover:bg-crimson/10"
+        >
+          Readiness (pas de prod)
         </Link>
         <Link
           href="/admin/veille"

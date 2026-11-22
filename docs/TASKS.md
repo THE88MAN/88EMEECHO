@@ -20,23 +20,18 @@
 - [x] Build production OK
 - [ ] Preview publiable (pas de prod) — via publish-app après push
 
-## En file — Phases suivantes
+## Terminé — Phases 2–6 (stubs / prep)
 
-### Phase 2 — Média
-- [ ] Modèle article complet + pages `[slug]`
-- [ ] Bibliothèque de sources (CRUD) + rejet UI des sources interdites
-- [ ] Auth Supabase + rôles + RLS
-- [ ] Bibliothèque / cartes médias
+- [x] Phase 2 CMS + bibliothèque
+- [x] Phase 3 ÉCHO VEILLE
+- [x] Phase 4 Agents ÉCHO
+- [x] Phase 5 Distribution (SEO, RSS, newsletter stubs)
+- [x] Phase 6 Production prep — tests, audit, checklists
+  - [x] `npm test` + `/admin/readiness`
+  - [x] Doc `PRODUCTION_READINESS.md`
+  - [ ] **Déploiement 88emeecho.com** — BLOQUÉ sans autorisation directeur
 
-### Phase 3 — Actualités
-- [ ] Veille quotidienne 54 États
-- [ ] Pipeline vérification + validation humaine
+## En file
 
-### Phase 4 — Agents ÉCHO
-- [ ] VEILLE / ARCHIVES / FACT-CHECK / VISUEL / ÉDITION
-
-### Phase 5 — Distribution
-- [ ] SEO, newsletter, réseaux
-
-### Phase 6 — Production
-- [ ] Tests, audit, déploiement autorisé sur 88emeecho.com
+- Auth Supabase + RLS réelle
+- Go-live domaine **uniquement** après feu vert directeur
