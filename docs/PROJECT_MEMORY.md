@@ -3,7 +3,7 @@
 ## Session initiale (2026-11-21, Europe/Paris)
 
 - Projet démarré dans Cursor Project « 88 EME ECHO ».
-- Domaine cible : 88emeecho.com.
+- Domaine cible : 88.com.
 - Logo officiel déposé dans le Context store.
 - Dépôt GitHub : https://github.com/THE88MAN/88EMEECHO.git
 - Gouvernance : charte, policy JSON, architecture, project-context (Context + dépôt `content/`).
@@ -24,7 +24,7 @@
 
 - Next.js 15 App Router ; pas de credentials Supabase dans le dépôt.
 - Charte et policy copiées dans `content/` (source dépôt) et `apps/web/src/lib/editorial/` (runtime).
-- Preview / publish-app Cursor autorisés ; Vercel + 88emeecho.com uniquement après feu vert.
+- Preview / publish-app Cursor autorisés ; Vercel + 88.com uniquement après feu vert.
 
 ## Erreurs connues
 

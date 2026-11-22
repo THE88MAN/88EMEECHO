@@ -15,8 +15,8 @@ function assert(condition: boolean, message: string) {
 }
 
 assert(SITE_NAME.includes("88"), "marque 88");
-assert(SITE_DOMAIN === "88emeecho.com", "domaine cible");
-assert(SITE_URL.includes("88emeecho.com"), "SITE_URL");
+assert(SITE_DOMAIN === "88.com", "domaine cible");
+assert(SITE_URL.includes("88.com"), "SITE_URL");
 assert(
   absoluteUrl("/feed.xml") === `${SITE_URL}/feed.xml`,
   "absoluteUrl feed",

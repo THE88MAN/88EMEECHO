@@ -53,7 +53,7 @@ export default function AdminReadinessPage() {
         Checklist tests, sécurité, perf, vérif éditoriale (Nofi / charte),
         domaine {report.domain}.{" "}
         <span className="text-crimson">
-          Déploiement 88emeecho.com interdit dans cette phase.
+          Déploiement 88.com interdit dans cette phase.
         </span>
       </p>
 

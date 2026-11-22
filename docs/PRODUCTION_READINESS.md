@@ -1,6 +1,6 @@
 # Production readiness — LE 88ÈME ÉCHO
 
-**Phase 6 — préparation uniquement. Ne pas déployer sur 88emeecho.com.**
+**Phase 6 — préparation uniquement. Ne pas déployer sur 88.com.**
 
 Date de référence : 2026-11-22.  
 Branche : `cursor/phase6-production-prep`.
@@ -9,7 +9,7 @@ Branche : `cursor/phase6-production-prep`.
 
 | Décision | Statut |
 |----------|--------|
-| Déploiement prod `88emeecho.com` | **BLOQUÉ** — autorisation directeur requise |
+| Déploiement prod `88.com` | **BLOQUÉ** — autorisation directeur requise |
 | Contenu démo fictif | Encore présent (bannière) |
 | Charte / Nofi / monogramme 88 | Vérifiés sync + tests verts |
 
@@ -56,12 +56,12 @@ Couvre :
 - [x] Monogramme `logo-88-mark.png`
 - [ ] Retrait contenu démo avant ouverture publique
 
-### Domaine 88emeecho.com
+### Domaine 88.com
 
 - [ ] DNS (A/AAAA ou CNAME)
 - [ ] TLS
 - [ ] Redirect www
-- [ ] `NEXT_PUBLIC_SITE_URL=https://88emeecho.com`
+- [ ] `NEXT_PUBLIC_SITE_URL=https://88.com`
 - [ ] Search Console — **après** autorisation prod
 
 ## UI admin

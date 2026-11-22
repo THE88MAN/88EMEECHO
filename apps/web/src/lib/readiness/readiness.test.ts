@@ -10,7 +10,7 @@ function assert(condition: boolean, message: string) {
 const report = runReadinessAudit();
 
 assert(report.productionDeployAllowed === false, "prod déploy interdit");
-assert(report.domain === "88emeecho.com", "domaine");
+assert(report.domain === "88.com", "domaine");
 assert(report.checks.length >= 10, "checklist complète");
 
 const deploy = report.checks.find((c) => c.id === "deploy-forbidden");

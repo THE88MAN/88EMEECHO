@@ -2,7 +2,7 @@
 
 Média documentaire indépendant consacré à l’histoire africaine, aux diasporas, aux mémoires oubliées et aux enjeux contemporains du continent.
 
-- **Domaine cible :** [88emeecho.com](https://88emeecho.com) (pas de déploiement production sans autorisation du directeur éditorial)
+- **Domaine cible :** [88.com](https://88.com) (pas de déploiement production sans autorisation du directeur éditorial)
 - **Langue publique :** français
 - **Stack Phase 1 :** Next.js (App Router) + TypeScript + Tailwind CSS ; schéma PostgreSQL Supabase
 

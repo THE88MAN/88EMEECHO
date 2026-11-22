@@ -9,7 +9,7 @@
 - Migration SQL `007_phase6_readiness_audit.sql`.
 
 ### Non fait
-- **Aucun déploiement** sur 88emeecho.com.
+- **Aucun déploiement** sur 88.com.
 
 ## [0.2.0] — 2026-11-21 — Refonte Mémoire vivante (hybride A+B+C)
 

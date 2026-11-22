@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 /**
  * Phase 6 — préparation prod.
- * Headers sécurité locaux. NE PAS considérer comme un go-live 88emeecho.com.
+ * Headers sécurité locaux. NE PAS considérer comme un go-live 88.com.
  */
 const securityHeaders = [
   { key: "X-DNS-Prefetch-Control", value: "on" },

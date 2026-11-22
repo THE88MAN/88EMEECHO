@@ -5,7 +5,7 @@ create table if not exists public.readiness_audit_runs (
   id uuid primary key default gen_random_uuid(),
   generated_at timestamptz not null default now(),
   production_deploy_allowed boolean not null default false,
-  domain text not null default '88emeecho.com',
+  domain text not null default '88.com',
   summary jsonb not null default '{}',
   checks jsonb not null default '[]',
   notes text,

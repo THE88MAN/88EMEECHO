@@ -330,7 +330,7 @@ function buildDeployChecks(): ReadinessCheck[] {
     {
       id: "deploy-forbidden",
       category: "deploy",
-      title: "Déploiement 88emeecho.com",
+      title: "Déploiement 88.com",
       status: "blocked",
       detail:
         "INTERDIT dans Phase 6. Aucun déploiement prod. Autorisation directeur requise.",

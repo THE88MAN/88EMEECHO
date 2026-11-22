@@ -29,7 +29,7 @@
 - [x] Phase 6 Production prep — tests, audit, checklists
   - [x] `npm test` + `/admin/readiness`
   - [x] Doc `PRODUCTION_READINESS.md`
-  - [ ] **Déploiement 88emeecho.com** — BLOQUÉ sans autorisation directeur
+  - [ ] **Déploiement 88.com** — BLOQUÉ sans autorisation directeur
 
 ## En file
 
