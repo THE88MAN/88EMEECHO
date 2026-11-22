@@ -35,20 +35,27 @@ export default function AdminDashboardPage() {
 
   return (
     <div className="mx-auto max-w-salle px-[4vw] py-14 md:py-20">
-      <p className="section-kicker">Administration · Phase 2–3</p>
+      <p className="section-kicker">Administration · Phase 2–4</p>
       <h1 className="mt-3 font-display text-4xl text-parchment">
         CMS éditorial
       </h1>
       <p className="mt-4 max-w-2xl font-serif text-parchment/70">
         Publier, modifier, archiver, statuts — stubs locaux. Auth Supabase
         réelle optionnelle ({db.configured ? "configurée" : "non branchée"}).
-        ÉCHO VEILLE : file continentale sans auto-publish sensible.
+        Agents ÉCHO : VEILLE, ARCHIVES, FACT-CHECK, VISUEL, ÉDITION — sans
+        auto-publish ni contournement de charte.
       </p>
 
       <nav className="mt-8 flex flex-wrap gap-4">
         <Link
-          href="/admin/veille"
+          href="/admin/agents"
           className="border border-gold/60 bg-gold/10 px-4 py-2 font-sans text-[11px] uppercase tracking-[0.18em] text-gold hover:bg-gold hover:text-ink"
+        >
+          Agents ÉCHO
+        </Link>
+        <Link
+          href="/admin/veille"
+          className="border border-anthracite-light px-4 py-2 font-sans text-[11px] uppercase tracking-[0.18em] text-parchment hover:border-gold hover:text-gold"
         >
           ÉCHO VEILLE
         </Link>
