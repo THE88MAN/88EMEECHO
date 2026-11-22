@@ -15,6 +15,7 @@ import {
   buildTwitter,
   organizationJsonLd,
   SITE_DESCRIPTION,
+  SITE_DOMAIN,
   SITE_NAME,
   SITE_URL,
 } from "@/lib/distribution";
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     default: SITE_NAME,
     template: `%s · ${SITE_NAME}`,
   },
-  description: `${SITE_DESCRIPTION} Domaine : 88emeecho.com.`,
+  description: `${SITE_DESCRIPTION} Domaine : ${SITE_DOMAIN}.`,
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,

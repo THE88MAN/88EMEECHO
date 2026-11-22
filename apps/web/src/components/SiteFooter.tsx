@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { SITE_DOMAIN } from "@/lib/distribution";
 import { listForbiddenSourceNames } from "@/lib/editorial";
 
 export function SiteFooter() {
@@ -21,8 +22,8 @@ export function SiteFooter() {
             />
           </Link>
           <p className="mt-4 max-w-sm font-serif text-sm leading-relaxed text-parchment/70">
-            Média documentaire indépendant — mémoire vivante. Domaine cible :
-            88emeecho.com.
+            Média documentaire indépendant — mémoire vivante. Domaine cible :{" "}
+            {SITE_DOMAIN}.
           </p>
         </div>
         <div>
