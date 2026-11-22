@@ -12,6 +12,7 @@ const files = [
   "src/lib/agents/policy.test.ts",
   "src/lib/distribution/distribution.test.ts",
   "src/lib/readiness/readiness.test.ts",
+  "src/lib/cms/rich-text.test.ts",
 ];
 
 let failed = 0;

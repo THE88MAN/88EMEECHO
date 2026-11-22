@@ -11,8 +11,14 @@ export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
   `https://${SITE_DOMAIN}`;
 
+export const SITE_TAGLINE =
+  "Histoire, mémoire et actualités africaines";
+
 export const SITE_DESCRIPTION =
   "Média documentaire indépendant — histoire africaine, diasporas, mémoires oubliées, géopolitique.";
+
+/** Titre HTML / OG officiel (accueil). */
+export const SITE_TITLE_FULL = `${SITE_NAME} — ${SITE_TAGLINE}`;
 
 export const DEFAULT_OG_IMAGE = "/logo-88-mark.png";
 

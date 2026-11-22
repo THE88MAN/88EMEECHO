@@ -11,6 +11,7 @@ import {
   listPublicCorrections,
   rubricTitle,
 } from "@/lib/cms";
+import { formatArticleParagraph } from "@/lib/cms/rich-text";
 import {
   articleJsonLd,
   articleMetadata,
@@ -102,9 +103,7 @@ export default async function ArticlePage({ params }: Props) {
               <p
                 key={i}
                 dangerouslySetInnerHTML={{
-                  __html: block
-                    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-                    .replace(/\n/g, "<br />"),
+                  __html: formatArticleParagraph(block),
                 }}
               />
             );
