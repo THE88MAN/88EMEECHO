@@ -1,21 +1,40 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import {
+  Cinzel,
+  Fraunces,
+  Instrument_Sans,
+  Source_Serif_4,
+} from "next/font/google";
 import { DemoBanner } from "@/components/DemoBanner";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
+const display = Fraunces({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
-const sans = Source_Sans_3({
+const carton = Cinzel({
+  variable: "--font-carton",
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  display: "swap",
+});
+
+const sans = Instrument_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const serif = Source_Serif_4({
+  variable: "--font-serif",
+  subsets: ["latin"],
+  weight: ["400", "600"],
   display: "swap",
 });
 
@@ -40,7 +59,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${display.variable} ${sans.variable} min-h-screen bg-ink text-parchment antialiased`}
+        className={`${display.variable} ${carton.variable} ${sans.variable} ${serif.variable} min-h-screen bg-ink text-parchment antialiased`}
       >
         <DemoBanner />
         <SiteHeader />

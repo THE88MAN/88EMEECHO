@@ -1,5 +1,16 @@
 # CHANGELOG — LE 88ÈME ÉCHO
 
+## [0.2.0] — 2026-11-21 — Refonte Mémoire vivante (hybride A+B+C)
+
+### Ajouté / modifié
+- Accueil reconstruit : intro (logo → plan → carton), L’Afrique aujourd’hui, Histoires oubliées, Archives parlent, Géopolitique, Diasporas, Documentaires.
+- Framer Motion + respect `prefers-reduced-motion`.
+- Tokens / typo hybride (Fraunces, Cinzel, Instrument Sans, Source Serif 4).
+- Distinction visuelle Archive vs Reconstitution IA.
+
+### Non modifié
+- Charte, policy, sources interdites, SQL, API search, admin stub, navigation.
+
 ## [0.1.0] — 2026-11-21 — Phase 1 Fondations
 
 ### Ajouté

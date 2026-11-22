@@ -10,37 +10,43 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#0a0a0a",
-          soft: "#141414",
-          mid: "#1c1c1c",
+          DEFAULT: "#0c0b0a",
+          soft: "#161412",
+          mid: "#1c1a17",
         },
         anthracite: {
           DEFAULT: "#2a2a2a",
-          light: "#3a3a3a",
+          light: "#3a3732",
         },
         gold: {
-          DEFAULT: "#c4a35a",
+          DEFAULT: "#b8974a",
           soft: "#d4b87a",
           deep: "#8a7035",
+          vif: "#d4a84b",
         },
         parchment: {
-          DEFAULT: "#f2ebe0",
+          DEFAULT: "#ebe4d6",
           muted: "#d9d0c3",
         },
         crimson: {
-          DEFAULT: "#6b1e1e",
-          soft: "#8a2e2e",
+          DEFAULT: "#5c1a1a",
+          soft: "#7a1f1f",
+        },
+        terre: {
+          DEFAULT: "#2c241c",
+        },
+        ambre: {
+          DEFAULT: "#c9a227",
         },
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
+        carton: ["var(--font-carton)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "ui-sans-serif", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
-      backgroundImage: {
-        "hero-veil":
-          "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(196,163,90,0.12), transparent 70%), linear-gradient(180deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.75) 55%, #0a0a0a 100%)",
-        "section-grain":
-          "linear-gradient(180deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%)",
+      maxWidth: {
+        salle: "72rem",
       },
       keyframes: {
         "fade-up": {

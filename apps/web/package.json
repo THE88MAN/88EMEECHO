@@ -10,6 +10,7 @@
     "test:editorial": "npx --yes tsx src/lib/editorial/forbidden-sources.test.ts"
   },
   "dependencies": {
+    "framer-motion": "^14.14.0",
     "next": "^15.5.29",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

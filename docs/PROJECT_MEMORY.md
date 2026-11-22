@@ -32,6 +32,12 @@
 - Recherche = index démo local, pas de full-text DB.
 - Images hero / logo locales ; pas encore de Storage Supabase.
 
+## Refonte Mémoire vivante (2026-11-21)
+
+- Karamba valide hybride A+B+C.
+- Branche `cursor/refonte-memoire-vivante-hybride` : accueil en salles, Framer Motion, typo/tokens mis à jour.
+- Charte / sources interdites / DB inchangées.
+
 ## Prochaine priorité
 
 Phase 2 : CMS articles réels, bibliothèque de sources, auth Supabase, pages article.
