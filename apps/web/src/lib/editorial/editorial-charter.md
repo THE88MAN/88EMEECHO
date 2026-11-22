@@ -36,6 +36,14 @@ Une source africaine n’est pas automatiquement fiable. Évaluer crédibilité,
 
 Pour les dossiers historiques, les archives primaires hors d’Afrique peuvent être utilisées lorsque leur provenance est clairement indiquée et qu’elles sont indispensables à la vérification.
 
+## Sources autorisées complémentaires (Antilles & Caraïbe)
+
+En plus des sources africaines, privilégier les sources **antillaises et caribéennes internes** (médias locaux, archives, chercheurs, institutions publiques de la région), évaluées selon crédibilité, indépendance et preuves — jamais automatiquement fiables.
+
+## Veille et langue
+
+La veille et les publications publiques sont **francophones** (français). Les sources non francophones ne sont pas prioritaires pour la couverture courante.
+
 ## Sources journalistiques interdites
 
 Ne jamais utiliser comme sources éditoriales, ni reprendre leurs articles même indirectement via agrégateurs :
@@ -43,6 +51,7 @@ Ne jamais utiliser comme sources éditoriales, ni reprendre leurs articles même
 - RFI
 - Le Monde
 - Jeune Afrique
+- **Nofi** — interdiction totale de la marque : tout nom, domaine (`nofi.*`), sous-marque, miroir, agrégateur Nofi, fil RSS / newsletter Nofi, et comptes officiels Nofi sur les réseaux sociaux lorsqu’ils sont utilisés comme source.
 
 ## Interdictions absolues
 

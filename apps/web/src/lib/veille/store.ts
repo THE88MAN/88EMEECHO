@@ -98,8 +98,9 @@ export function startVeilleRun(label?: string): PipelineActionResult {
     finishedAt: null,
     triggeredBy: "admin-stub",
     statesTargeted: ["SN", "CI", "GH", "NG", "KE", "ZA"],
-    languagesMonitored: ["fr", "en", "ar", "pt"],
-    notes: "Démarrage stub — aucune collecte réseau réelle.",
+    languagesMonitored: ["fr"],
+    notes:
+      "Démarrage stub — veille francophone uniquement (watchLanguages=fr). Aucune collecte réseau réelle.",
   };
   store().runs.unshift(run);
   log("info", `Veille lancée : ${run.label}`, run.id);

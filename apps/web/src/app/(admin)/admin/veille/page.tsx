@@ -40,8 +40,11 @@ export default function AdminVeillePage() {
       </h1>
       <p className="mt-4 max-w-2xl font-serif text-parchment/70">
         Pipeline recherche → collecte → vérification → rédaction FR →
-        validation. Couverture {AFRICAN_STATES.length} États. Pas d’auto-publish
-        si incertitude. Sources interdites : {forbidden.join(", ")}.
+        validation. Couverture {AFRICAN_STATES.length} États. Veille{" "}
+        <strong className="font-semibold text-parchment">francophone</strong>{" "}
+        uniquement (watchLanguages = fr). Pas d’auto-publish si incertitude.
+        Sources interdites : {forbidden.join(", ")}. Sources antillaises /
+        caribéennes internes autorisées.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-6">
