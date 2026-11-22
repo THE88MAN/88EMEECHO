@@ -193,6 +193,7 @@ export const navItems = [
   { href: "/diasporas", label: "Diasporas" },
   { href: "/documentaires", label: "Documentaires" },
   { href: "/archives", label: "Archives" },
+  { href: "/bibliotheque", label: "Bibliothèque" },
   { href: "/a-propos", label: "À propos" },
 ] as const;
 
