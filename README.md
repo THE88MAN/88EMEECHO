@@ -29,6 +29,6 @@ supabase/          # Migrations SQL
 
 ## Gouvernance
 
-La charte éditoriale et la liste des sources interdites (RFI, Le Monde, Jeune Afrique) ne doivent **jamais** être modifiées sans autorisation explicite du directeur éditorial.
+La charte éditoriale et la liste des sources interdites (RFI, Le Monde, Jeune Afrique, Nofi — marque entière) ne doivent **jamais** être modifiées sans autorisation explicite du directeur éditorial.
 
 Phase 1 expose du **contenu démo fictif** clairement signalé — ce ne sont pas des faits vérifiés.

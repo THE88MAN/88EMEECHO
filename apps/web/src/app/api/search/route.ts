@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
       query: q,
       results: [],
       warning:
-        "Requête liée à une source journalistique interdite (RFI, Le Monde, Jeune Afrique). Aucun résultat éditorial servi.",
+        "Requête liée à une source journalistique interdite (RFI, Le Monde, Jeune Afrique, Nofi). Aucun résultat éditorial servi.",
     });
   }
 

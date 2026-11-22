@@ -38,7 +38,12 @@
     "societe_civile_africaine",
     "document_officiel_africain",
     "temoignage_verifie_contextualise",
-    "archive_primaire_hors_afrique_provenance_indiquee"
+    "archive_primaire_hors_afrique_provenance_indiquee",
+    "media_antillais_interne",
+    "media_caraibe_interne",
+    "archive_antillaise_caraibe",
+    "chercheur_historien_antillais_caraibe",
+    "institution_publique_antillaise_caraibe"
   ],
   "forbiddenEditorialSources": [
     {
@@ -52,8 +57,49 @@
     {
       "name": "Jeune Afrique",
       "match": ["jeuneafrique.com", "Jeune Afrique"]
+    },
+    {
+      "name": "Nofi",
+      "match": [
+        "nofi",
+        "nofi.*",
+        "nofi.media",
+        "nofi.fr",
+        "nofi.com",
+        "nofi.net",
+        "nofi.org",
+        "nofi.africa",
+        "nofi.info",
+        "www.nofi",
+        "m.nofi",
+        "app.nofi",
+        "cdn.nofi",
+        "api.nofi",
+        "nofi-media",
+        "nofimedia",
+        "nofi media",
+        "@nofi",
+        "facebook.com/nofi",
+        "instagram.com/nofi",
+        "twitter.com/nofi",
+        "x.com/nofi",
+        "tiktok.com/@nofi",
+        "tiktok.com/nofi",
+        "youtube.com/@nofi",
+        "youtube.com/nofi",
+        "linkedin.com/company/nofi",
+        "t.me/nofi"
+      ],
+      "scope": "entire_brand",
+      "notes": "Toute la marque Nofi : domaines, sous-marques, miroirs, agrégateurs, newsletters, comptes officiels."
     }
   ],
+  "watchPolicy": {
+    "publicOutputLanguage": "fr",
+    "francophoneOnly": true,
+    "watchLanguages": ["fr"],
+    "preferFrancophoneAfricanAndCaribbeanSources": true
+  },
   "absoluteProhibitions": [
     "invent_information",
     "invent_quotation",
@@ -83,7 +129,8 @@
       "admin_permissions"
     ]
   },
-  "watchLanguages": ["fr", "en", "pt", "ar", "es", "african_languages_when_reliable"],
+  "watchLanguages": ["fr"],
   "publicOutputLanguage": "fr",
-  "africanStatesCoverage": 54
+  "africanStatesCoverage": 54,
+  "caribbeanAntillesCoverage": true
 }
