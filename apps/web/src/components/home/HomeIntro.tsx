@@ -20,6 +20,7 @@ export function HomeIntro() {
           }}
           aria-hidden
         />
+        <h1 className="sr-only">LE 88ÈME ÉCHO</h1>
         <motion.div
           initial={reduce ? false : "hidden"}
           animate="visible"
@@ -29,34 +30,25 @@ export function HomeIntro() {
         >
           <Image
             src="/logo-88eme-echo.png"
-            alt="88 — 88ÈME ÉCHO"
+            alt="LE 88ÈME ÉCHO"
             width={280}
             height={280}
-            className="mx-auto h-36 w-36 object-contain sm:h-48 sm:w-48 md:h-56 md:w-56"
+            className="mx-auto h-40 w-40 object-contain sm:h-52 sm:w-52 md:h-60 md:w-60"
             priority
           />
         </motion.div>
-        <motion.h1
-          initial={reduce ? false : "hidden"}
-          animate="visible"
-          variants={fadeUp}
-          transition={{ ...easeOutSoft, delay: reduce ? 0 : 0.15 }}
-          className="relative z-10 mt-6 font-display text-4xl leading-none tracking-wide text-gold sm:text-5xl md:text-6xl"
-        >
-          LE 88ÈME ÉCHO
-        </motion.h1>
         <motion.div
           initial={reduce ? false : "hidden"}
           animate="visible"
           variants={goldLine}
-          transition={{ ...easeOutSoft, delay: reduce ? 0 : 0.35 }}
-          className="relative z-10 mt-5 h-px w-24 origin-center bg-gold/80"
+          transition={{ ...easeOutSoft, delay: reduce ? 0 : 0.25 }}
+          className="relative z-10 mt-8 h-px w-24 origin-center bg-gold/80"
         />
         <motion.p
           initial={reduce ? false : "hidden"}
           animate="visible"
           variants={fadeUp}
-          transition={{ ...easeOutSoft, delay: reduce ? 0 : 0.4 }}
+          transition={{ ...easeOutSoft, delay: reduce ? 0 : 0.35 }}
           className="relative z-10 mt-6 max-w-xl font-serif text-base leading-relaxed text-parchment/90 sm:text-lg text-balance"
         >
           Documenter l’histoire africaine, les diasporas et les mémoires
@@ -66,7 +58,7 @@ export function HomeIntro() {
           initial={reduce ? false : "hidden"}
           animate="visible"
           variants={fadeUp}
-          transition={{ ...easeOutSoft, delay: reduce ? 0 : 0.5 }}
+          transition={{ ...easeOutSoft, delay: reduce ? 0 : 0.45 }}
           className="relative z-10 mt-10 flex flex-wrap items-center justify-center gap-4"
         >
           <Link

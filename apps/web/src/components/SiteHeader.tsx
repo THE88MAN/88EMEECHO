@@ -25,7 +25,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-salle items-center justify-between gap-4 px-[4vw] py-3">
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-3"
+          className="flex shrink-0 items-center"
           aria-label="LE 88ÈME ÉCHO — Accueil"
         >
           <Image
@@ -36,9 +36,6 @@ export function SiteHeader() {
             className="h-10 w-10 object-contain md:h-11 md:w-11"
             priority
           />
-          <span className="hidden font-display text-sm tracking-[0.18em] text-parchment sm:inline">
-            LE 88ÈME ÉCHO
-          </span>
         </Link>
 
         <nav

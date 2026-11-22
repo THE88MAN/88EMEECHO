@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { listForbiddenSourceNames } from "@/lib/editorial";
 
@@ -8,8 +9,16 @@ export function SiteFooter() {
     <footer className="border-t border-anthracite-light bg-ink-soft">
       <div className="mx-auto grid max-w-salle gap-8 px-[4vw] py-12 md:grid-cols-3">
         <div>
-          <p className="font-display text-2xl text-gold">LE 88ÈME ÉCHO</p>
-          <p className="mt-3 max-w-sm font-serif text-sm leading-relaxed text-parchment/70">
+          <Link href="/" aria-label="LE 88ÈME ÉCHO — Accueil">
+            <Image
+              src="/logo-88eme-echo.png"
+              alt="LE 88ÈME ÉCHO"
+              width={96}
+              height={96}
+              className="h-16 w-16 object-contain"
+            />
+          </Link>
+          <p className="mt-4 max-w-sm font-serif text-sm leading-relaxed text-parchment/70">
             Média documentaire indépendant — mémoire vivante. Domaine cible :
             88emeecho.com.
           </p>
@@ -37,8 +46,8 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/5 px-[4vw] py-4 text-center font-sans text-[11px] tracking-wide text-parchment/45">
-        © {new Date().getFullYear()} LE 88ÈME ÉCHO — Mémoire vivante (A+B+C).
-        Pas de production sans autorisation.
+        © {new Date().getFullYear()} — Mémoire vivante (A+B+C). Pas de
+        production sans autorisation.
       </div>
     </footer>
   );
