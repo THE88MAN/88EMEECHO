@@ -1,0 +1,89 @@
+{
+  "version": "1.0.0",
+  "media": {
+    "officialName": "LE 88ÈME ÉCHO",
+    "domain": "88emeecho.com",
+    "primaryLanguage": "fr",
+    "editorialDirectorRequiredForCharterChanges": true
+  },
+  "contentLabels": [
+    "fait_historique_etabli",
+    "information_contemporaine_verifiee",
+    "interpretation_historique",
+    "hypothese_documentaire",
+    "analyse_geopolitique",
+    "opinion_editoriale"
+  ],
+  "publicationStatuses": [
+    "BROUILLON",
+    "A_VERIFIER",
+    "VALIDE",
+    "PUBLIE",
+    "CORRECTION_NECESSAIRE"
+  ],
+  "autoPublish": {
+    "allowed": false,
+    "requireHumanValidationForSensitive": true,
+    "requireHumanValidationWhenUncertain": true,
+    "forbidInventingToFillCalendar": true
+  },
+  "allowedSourceCategories": [
+    "media_independant_africain",
+    "journal_national_africain",
+    "agence_presse_africaine",
+    "chercheur_historien_africain",
+    "universite_africaine",
+    "archive_nationale_africaine",
+    "institution_publique_africaine",
+    "societe_civile_africaine",
+    "document_officiel_africain",
+    "temoignage_verifie_contextualise",
+    "archive_primaire_hors_afrique_provenance_indiquee"
+  ],
+  "forbiddenEditorialSources": [
+    {
+      "name": "RFI",
+      "match": ["rfi.fr", "rfi.com", "Radio France Internationale"]
+    },
+    {
+      "name": "Le Monde",
+      "match": ["lemonde.fr", "Le Monde"]
+    },
+    {
+      "name": "Jeune Afrique",
+      "match": ["jeuneafrique.com", "Jeune Afrique"]
+    }
+  ],
+  "absoluteProhibitions": [
+    "invent_information",
+    "invent_quotation",
+    "fabricate_historical_reference",
+    "present_ai_image_as_authentic_photo",
+    "publish_rumor_as_fact",
+    "modify_editorial_line_without_authorization",
+    "turn_media_into_propaganda",
+    "auto_copy_other_media_dispatches",
+    "publish_serious_accusations_without_sufficient_evidence",
+    "silently_delete_historical_correction"
+  ],
+  "aiGeneratedImagery": {
+    "mandatoryLabel": "Reconstitution historique générée par intelligence artificielle.",
+    "neverPresentAsArchivePhoto": true,
+    "requireProvenanceSheet": true,
+    "formats": ["16:9", "9:16", "1:1", "4:5"]
+  },
+  "agents": {
+    "mustRespectCharter": true,
+    "cannotBypassEditorialRules": true,
+    "cannotModifyAlone": [
+      "editorial_charter",
+      "forbidden_sources",
+      "verification_policy",
+      "publication_rules",
+      "admin_permissions"
+    ]
+  },
+  "watchLanguages": ["fr", "en", "pt", "ar", "es", "african_languages_when_reliable"],
+  "publicOutputLanguage": "fr",
+  "africanStatesCoverage": 54
+}
