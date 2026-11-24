@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { AgentTaskControls } from "@/components/admin/AgentControls";
 import {
   AGENT_KIND_FR,
+  checkVisuelSheet,
   getAgentTask,
   getVisuelSheetForTask,
   listAgentTasks,
@@ -31,6 +32,7 @@ export default async function AgentTaskPage({ params }: Props) {
   if (!task) notFound();
   const sheet =
     task.agentKind === "visuel" ? getVisuelSheetForTask(task.id) : undefined;
+  const sheetCheck = sheet ? checkVisuelSheet(sheet) : undefined;
 
   return (
     <div className="mx-auto max-w-3xl px-[4vw] py-14 md:py-20">
@@ -109,7 +111,34 @@ export default async function AgentTaskPage({ params }: Props) {
               <strong className="text-parchment">Modèle :</strong>{" "}
               {sheet.modelUsed}
             </li>
+            {sheet.generation && (
+              <li>
+                <strong className="text-parchment">Génération :</strong>{" "}
+                {sheet.generation.format} · seed{" "}
+                {sheet.generation.seed ?? "non renseigné"}
+                {sheet.generation.workflowRef
+                  ? ` · ${sheet.generation.workflowRef}`
+                  : ""}
+              </li>
+            )}
           </ul>
+          {sheetCheck && (
+            <div className="mt-5 border-t border-anthracite-light pt-4 font-sans text-xs">
+              <p className={sheetCheck.complete ? "text-gold" : "text-ambre"}>
+                {sheetCheck.complete
+                  ? "Fiche complète (charte) — contenu à valider par un humain."
+                  : "Fiche incomplète — image non publiable."}
+              </p>
+              <ul className="mt-2 space-y-1 text-parchment/60">
+                {sheetCheck.problems.map((p) => (
+                  <li key={p}>✕ {p}</li>
+                ))}
+                {sheetCheck.warnings.map((w) => (
+                  <li key={w}>! {w}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
       )}
 

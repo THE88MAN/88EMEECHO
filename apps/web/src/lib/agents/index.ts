@@ -1,5 +1,6 @@
 export * from "./types";
 export * from "./policy";
+export * from "./visuel-sheet";
 export {
   listEchoAgents,
   listAgentRuns,

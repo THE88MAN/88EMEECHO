@@ -89,4 +89,18 @@ export type VisuelSheet = {
   uncertainties: string;
   modelUsed: string;
   mandatoryLabel: string;
+  /** Paramètres techniques pour reproduire l'image (ComfyUI ou autre). */
+  generation?: VisuelGeneration;
+};
+
+export type VisuelGeneration = {
+  prompt: string;
+  negativePrompt?: string;
+  /** Graine du sampler — sans elle, l'image n'est pas reproductible. */
+  seed: number | null;
+  /** Format éditorial (policy.aiGeneratedImagery.formats). */
+  format: string;
+  /** Fichier workflow exporté, ou identifiant de version. */
+  workflowRef?: string;
+  generatedAt: string;
 };

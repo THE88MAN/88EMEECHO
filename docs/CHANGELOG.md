@@ -1,5 +1,15 @@
 # CHANGELOG — LE 88ÈME ÉCHO
 
+## [Non publié] — 2026-11-24 — Fiche de traçabilité images IA
+
+### Ajouté
+- `checkVisuelSheet()` (`apps/web/src/lib/agents/visuel-sheet.ts`) : refuse une fiche dont un des 7 champs charte est vide, dont la mention obligatoire est modifiée, ou dont le format sort de la policy.
+- Paramètres de génération facultatifs (prompt, seed, format, workflow) pour la reproductibilité.
+- Statut de complétude affiché sur `/admin/agents/tache/[id]`.
+- Migration `008_visuel_sheet_generation.sql` (colonnes génération, contraintes label + format).
+- Modèle manuel `docs/templates/fiche-tracabilite-image-ia.md`.
+- Test `visuel-sheet.test.ts` dans `npm test`.
+
 ## [0.6.0] — 2026-11-22 — Phase 6 production prep
 
 ### Ajouté
