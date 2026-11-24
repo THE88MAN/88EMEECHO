@@ -10,6 +10,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const files = [
   "src/lib/editorial/forbidden-sources.test.ts",
   "src/lib/agents/policy.test.ts",
+  "src/lib/agents/visuel-sheet.test.ts",
   "src/lib/distribution/distribution.test.ts",
   "src/lib/readiness/readiness.test.ts",
 ];
