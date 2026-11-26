@@ -17,6 +17,7 @@ import {
   SITE_DESCRIPTION,
   SITE_DOMAIN,
   SITE_NAME,
+  SITE_TITLE_FULL,
   SITE_URL,
 } from "@/lib/distribution";
 import "./globals.css";
@@ -52,7 +53,7 @@ const serif = Source_Serif_4({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: SITE_NAME,
+    default: SITE_TITLE_FULL,
     template: `%s · ${SITE_NAME}`,
   },
   description: `${SITE_DESCRIPTION} Domaine : ${SITE_DOMAIN}.`,
@@ -67,12 +68,12 @@ export const metadata: Metadata = {
     },
   },
   openGraph: buildOpenGraph({
-    title: SITE_NAME,
+    title: SITE_TITLE_FULL,
     description: SITE_DESCRIPTION,
     path: "/",
   }),
   twitter: buildTwitter({
-    title: SITE_NAME,
+    title: SITE_TITLE_FULL,
     description: SITE_DESCRIPTION,
   }),
   robots: {

@@ -9,6 +9,11 @@ import {
   suspendAgentRun,
   type EchoAgentKind,
 } from "@/lib/agents";
+import {
+  enforceRateLimit,
+  readJsonLimited,
+  requireApiViewer,
+} from "@/lib/security/api-guard";
 
 type Action =
   | "start_run"
@@ -20,20 +25,22 @@ type Action =
   | "reject_task";
 
 export async function POST(request: NextRequest) {
-  let body: {
+  const auth = await requireApiViewer(request);
+  if (auth instanceof Response) return auth;
+
+  const limited = enforceRateLimit(request, { key: "agents", limit: 60 });
+  if (limited) return limited;
+
+  const parsed = await readJsonLimited<{
     action?: Action;
     agentKind?: EchoAgentKind;
     runId?: string;
     taskId?: string;
     label?: string;
-  };
-  try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ ok: false, message: "JSON invalide" }, { status: 400 });
-  }
+  }>(request);
+  if (!parsed.ok) return parsed.response;
 
-  const { action, agentKind, runId, taskId, label } = body;
+  const { action, agentKind, runId, taskId, label } = parsed.body;
   let result;
 
   switch (action) {

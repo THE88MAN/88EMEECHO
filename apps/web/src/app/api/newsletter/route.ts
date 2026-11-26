@@ -4,20 +4,21 @@ import {
   subscribeNewsletter,
   unsubscribeByEmail,
 } from "@/lib/distribution";
+import { enforceRateLimit, readJsonLimited } from "@/lib/security/api-guard";
 
 export async function POST(request: NextRequest) {
-  let body: {
+  const limited = enforceRateLimit(request, { key: "newsletter", limit: 20 });
+  if (limited) return limited;
+
+  const parsed = await readJsonLimited<{
     action?: "subscribe" | "confirm" | "unsubscribe";
     email?: string;
     source?: string;
     id?: string;
-  };
-  try {
-    body = await request.json();
-  } catch {
-    return NextResponse.json({ ok: false, message: "JSON invalide" }, { status: 400 });
-  }
+  }>(request);
+  if (!parsed.ok) return parsed.response;
 
+  const body = parsed.body;
   const action = body.action ?? "subscribe";
 
   if (action === "subscribe") {
